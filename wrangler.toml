@@ -1,0 +1,7 @@
+name = "pink-october"
+compatibility_date = "2024-09-23"
+
+[env.production]
+routes = [
+  { pattern = "pinkoctober.watantheseedoflove.org", custom_domain = true }
+]

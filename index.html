@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pink October | Watan The Seed of Love</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Playfair+Display:wght@400;700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --pink-primary: #E8336A;
+  --pink-deep: #C2185B;
+  --pink-soft: #FCE4EC;
+  --pink-light: #F8BBD0;
+  --pink-glow: rgba(232,51,106,0.35);
+  --dark: #2D1B2E;
+  --cream: #FFF9FB;
+  --gold: #D4AF37;
+  --gold-soft: #F5E6C8;
+  --white: #FFFFFF;
+  --shadow: 0 8px 32px rgba(194,24,91,0.15);
+  --shadow-lg: 0 20px 60px rgba(194,24,91,0.25);
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body {
+  font-family:'Inter','Cairo',sans-serif;
+  background:var(--cream);
+  color:var(--dark);
+  overflow-x:hidden;
+}
+.rtl { direction:rtl; text-align:right; }
+.ar { font-family:'Cairo',sans-serif; }
+
+/* ===== HERO ===== */
+.hero {
+  position:relative;
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+}
+.hero-bg {
+  position:absolute; inset:0;
+  background:url('https://imagedelivery.net/S4Dv_qD_dD32Es9cECvglg/bd0941ae-cea3-4e94-d4ac-239fd4b95e00/public') center/cover no-repeat;
+  transform:scale(1.05);
+}
+.hero-overlay {
+  position:absolute; inset:0;
+  background:linear-gradient(135deg, rgba(45,27,46,0.72) 0%, rgba(194,24,91,0.55) 50%, rgba(45,27,46,0.78) 100%);
+}
+.hero-content {
+  position:relative; z-index:2;
+  text-align:center;
+  padding:2rem;
+  max-width:900px;
+  animation:fadeUp 1.2s ease;
+}
+.hero-badge {
+  display:inline-block;
+  background:rgba(255,255,255,0.15);
+  backdrop-filter:blur(10px);
+  border:1px solid rgba(255,255,255,0.3);
+  color:#fff;
+  padding:.6rem 1.8rem;
+  border-radius:50px;
+  font-size:.95rem;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  margin-bottom:1.5rem;
+  font-weight:600;
+}
+.hero h1 {
+  font-family:'Playfair Display',serif;
+  font-size:clamp(2.5rem,6vw,5rem);
+  color:#fff;
+  line-height:1.1;
+  text-shadow:0 4px 30px rgba(0,0,0,0.4);
+  margin-bottom:.5rem;
+}
+.hero h1.ar {
+  font-family:'Cairo',sans-serif;
+  font-size:clamp(1.8rem,4.5vw,3.5rem);
+  font-weight:800;
+  margin-bottom:1.5rem;
+  color:var(--pink-light);
+}
+.hero-sub {
+  color:rgba(255,255,255,0.92);
+  font-size:clamp(1rem,2.5vw,1.35rem);
+  max-width:700px;
+  margin:0 auto 1rem;
+  line-height:1.7;
+}
+.hero-sub.ar { font-family:'Cairo',sans-serif; font-weight:500; }
+.hero-cta {
+  margin-top:2rem;
+  display:flex;
+  gap:1rem;
+  justify-content:center;
+  flex-wrap:wrap;
+}
+.btn-donate {
+  display:inline-flex;
+  align-items:center;
+  gap:.6rem;
+  background:linear-gradient(135deg,var(--pink-primary),var(--pink-deep));
+  color:#fff;
+  padding:1.1rem 2.8rem;
+  border-radius:50px;
+  font-size:1.15rem;
+  font-weight:700;
+  text-decoration:none;
+  box-shadow:0 8px 30px var(--pink-glow);
+  transition:all .3s ease;
+  border:none;
+  cursor:pointer;
+  letter-spacing:.5px;
+}
+.btn-donate:hover {
+  transform:translateY(-3px);
+  box-shadow:0 14px 45px var(--pink-glow);
+}
+.btn-secondary {
+  display:inline-flex;
+  align-items:center;
+  background:rgba(255,255,255,0.12);
+  backdrop-filter:blur(10px);
+  border:1.5px solid rgba(255,255,255,0.4);
+  color:#fff;
+  padding:1.1rem 2.5rem;
+  border-radius:50px;
+  font-size:1.1rem;
+  font-weight:600;
+  text-decoration:none;
+  transition:all .3s ease;
+}
+.btn-secondary:hover {
+  background:rgba(255,255,255,0.22);
+  transform:translateY(-3px);
+}
+.scroll-indicator {
+  position:absolute;
+  bottom:2rem; left:50%;
+  transform:translateX(-50%);
+  z-index:2;
+  color:rgba(255,255,255,0.7);
+  font-size:1.5rem;
+  animation:bounce 2s infinite;
+}
+
+/* ===== SECTIONS ===== */
+.section {
+  padding:5rem 2rem;
+  max-width:1100px;
+  margin:0 auto;
+}
+.section-title {
+  text-align:center;
+  margin-bottom:3rem;
+}
+.section-title h2 {
+  font-family:'Playfair Display',serif;
+  font-size:clamp(2rem,4vw,3rem);
+  color:var(--pink-deep);
+  margin-bottom:.3rem;
+}
+.section-title h2.ar {
+  font-family:'Cairo',sans-serif;
+  font-weight:800;
+}
+.section-title p {
+  color:var(--pink-primary);
+  font-size:1.1rem;
+  font-weight:500;
+}
+.section-title .ar {
+  font-family:'Cairo',sans-serif;
+  color:var(--pink-deep);
+}
+
+/* Story Cards */
+.story-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:2rem;
+}
+.story-card {
+  background:var(--white);
+  border-radius:20px;
+  padding:2.5rem 2rem;
+  text-align:center;
+  box-shadow:var(--shadow);
+  transition:all .4s ease;
+  border-top:4px solid var(--pink-primary);
+}
+.story-card:hover {
+  transform:translateY(-8px);
+  box-shadow:var(--shadow-lg);
+}
+.story-card .icon {
+  width:70px; height:70px;
+  margin:0 auto 1.5rem;
+  background:var(--pink-soft);
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:2rem;
+}
+.story-card h3 {
+  font-family:'Playfair Display',serif;
+  font-size:1.4rem;
+  color:var(--pink-deep);
+  margin-bottom:.3rem;
+}
+.story-card h3.ar {
+  font-family:'Cairo',sans-serif;
+  font-weight:700;
+}
+.story-card p {
+  color:#666;
+  line-height:1.7;
+  font-size:.95rem;
+}
+.story-card p.ar {
+  font-family:'Cairo',sans-serif;
+  font-weight:500;
+  color:#555;
+}
+
+/* ===== DONATION SECTION ===== */
+.donate-section {
+  background:linear-gradient(135deg,var(--pink-deep) 0%,var(--pink-primary) 50%,#9C1458 100%);
+  padding:5rem 2rem;
+  position:relative;
+  overflow:hidden;
+}
+.donate-section::before {
+  content:'';
+  position:absolute;
+  top:-50%; right:-20%;
+  width:600px; height:600px;
+  background:rgba(255,255,255,0.05);
+  border-radius:50%;
+}
+.donate-section::after {
+  content:'';
+  position:absolute;
+  bottom:-30%; left:-10%;
+  width:400px; height:400px;
+  background:rgba(255,255,255,0.04);
+  border-radius:50%;
+}
+.donate-inner {
+  max-width:1000px;
+  margin:0 auto;
+  position:relative;
+  z-index:1;
+}
+.donate-header {
+  text-align:center;
+  margin-bottom:3rem;
+}
+.donate-header h2 {
+  font-family:'Playfair Display',serif;
+  font-size:clamp(2rem,4.5vw,3.2rem);
+  color:#fff;
+  margin-bottom:.5rem;
+}
+.donate-header h2.ar {
+  font-family:'Cairo',sans-serif;
+  font-weight:800;
+  color:var(--gold-soft);
+}
+.donate-header p {
+  color:rgba(255,255,255,0.85);
+  font-size:1.15rem;
+  max-width:600px;
+  margin:0 auto;
+}
+.donate-header p.ar {
+  font-family:'Cairo',sans-serif;
+  font-weight:500;
+}
+
+.donate-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:2.5rem;
+  align-items:start;
+}
+@media(max-width:768px) {
+  .donate-grid { grid-template-columns:1fr; }
+}
+
+/* QR Card */
+.qr-card {
+  background:var(--white);
+  border-radius:24px;
+  padding:2.5rem;
+  text-align:center;
+  box-shadow:0 20px 60px rgba(0,0,0,0.2);
+}
+.qr-card h3 {
+  font-family:'Playfair Display',serif;
+  font-size:1.5rem;
+  color:var(--pink-deep);
+  margin-bottom:.3rem;
+}
+.qr-card h3.ar {
+  font-family:'Cairo',sans-serif;
+  font-weight:700;
+}
+.qr-card .qr-sub {
+  color:#888;
+  font-size:.9rem;
+  margin-bottom:1.5rem;
+}
+.qr-card .qr-sub.ar { font-family:'Cairo',sans-serif; }
+.qr-placeholder {
+  width:200px; height:200px;
+  margin:0 auto 1rem;
+  background:var(--cream);
+  border:3px solid var(--pink-primary);
+  border-radius:16px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:1rem;
+}
+.qr-placeholder img {
+  width:100%; height:100%;
+  object-fit:contain;
+}
+.qr-note {
+  color:var(--pink-primary);
+  font-weight:600;
+  font-size:.95rem;
+}
+.qr-note.ar { font-family:'Cairo',sans-serif; }
+
+/* Methods Card */
+.methods-card {
+  background:var(--white);
+  border-radius:24px;
+  padding:2.5rem;
+  box-shadow:0 20px 60px rgba(0,0,0,0.2);
+}
+.methods-card h3 {
+  font-family:'Playfair Display',serif;
+  font-size:1.5rem;
+  color:var(--pink-deep);
+  margin-bottom:.3rem;
+}
+.methods-card h3.ar {
+  font-family:'Cairo',sans-serif;
+  font-weight:700;
+}
+.methods-card .methods-sub {
+  color:#888;
+  font-size:.9rem;
+  margin-bottom:1.8rem;
+}
+.methods-card .methods-sub.ar { font-family:'Cairo',sans-serif; }
+.method-item {
+  display:flex;
+  align-items:center;
+  gap:1rem;
+  padding:1rem 1.2rem;
+  background:var(--pink-soft);
+  border-radius:14px;
+  margin-bottom:.8rem;
+  transition:all .3s ease;
+  border-left:4px solid var(--pink-primary);
+}
+.method-item:hover {
+  background:var(--pink-light);
+  transform:translateX(5px);
+}
+.method-item .m-icon {
+  font-size:1.5rem;
+  min-width:40px;
+  text-align:center;
+}
+.method-item .m-label {
+  font-weight:700;
+  color:var(--pink-deep);
+  font-size:.95rem;
+}
+.method-item .m-value {
+  color:#444;
+  font-size:1rem;
+  font-weight:600;
+  font-family:'Inter',monospace;
+}
+.method-item .ar-label {
+  font-family:'Cairo',sans-serif;
+  font-weight:600;
+  color:var(--pink-deep);
+  font-size:.85rem;
+}
+
+/* Contact */
+.contact-block {
+  margin-top:1.5rem;
+  padding-top:1.5rem;
+  border-top:2px dashed var(--pink-light);
+}
+.contact-block h4 {
+  font-family:'Playfair Display',serif;
+  color:var(--pink-deep);
+  font-size:1.2rem;
+  margin-bottom:.3rem;
+}
+.contact-block h4.ar {
+  font-family:'Cairo',sans-serif;
+  font-weight:700;
+}
+.contact-block .contact-sub {
+  color:#888;
+  font-size:.85rem;
+  margin-bottom:.8rem;
+}
+.contact-block .contact-sub.ar { font-family:'Cairo',sans-serif; }
+.contact-phones {
+  display:flex;
+  flex-wrap:wrap;
+  gap:.6rem;
+}
+.contact-phone {
+  background:var(--pink-primary);
+  color:#fff;
+  padding:.6rem 1.2rem;
+  border-radius:50px;
+  font-weight:600;
+  font-size:.9rem;
+  text-decoration:none;
+  transition:all .3s;
+}
+.contact-phone:hover {
+  background:var(--pink-deep);
+  transform:scale(1.05);
+}
+
+/* ===== DONATE NOW BUTTON SECTION ===== */
+.donate-cta-section {
+  background:var(--cream);
+  padding:4rem 2rem;
+  text-align:center;
+}
+.donate-cta-inner {
+  max-width:600px;
+  margin:0 auto;
+}
+.donate-cta-inner h3 {
+  font-family:'Playfair Display',serif;
+  font-size:2rem;
+  color:var(--pink-deep);
+  margin-bottom:.3rem;
+}
+.donate-cta-inner h3.ar {
+  font-family:'Cairo',sans-serif;
+  font-weight:800;
+}
+.donate-cta-inner .cta-sub {
+  color:#777;
+  margin-bottom:2rem;
+  font-size:1.05rem;
+}
+.donate-cta-inner .cta-sub.ar {
+  font-family:'Cairo',sans-serif;
+  font-weight:500;
+}
+.btn-donate-now {
+  display:inline-flex;
+  align-items:center;
+  gap:.8rem;
+  background:linear-gradient(135deg,var(--pink-primary),var(--pink-deep));
+  color:#fff;
+  padding:1.3rem 3.5rem;
+  border-radius:50px;
+  font-size:1.3rem;
+  font-weight:800;
+  text-decoration:none;
+  box-shadow:0 12px 40px var(--pink-glow);
+  transition:all .3s ease;
+  border:none;
+  cursor:pointer;
+  letter-spacing:1px;
+  text-transform:uppercase;
+}
+.btn-donate-now:hover {
+  transform:translateY(-4px) scale(1.03);
+  box-shadow:0 18px 55px var(--pink-glow);
+}
+.payment-logos {
+  margin-top:2rem;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:1.2rem;
+  flex-wrap:wrap;
+}
+.payment-logos .pay-logo {
+  height:32px;
+  display:flex;
+  align-items:center;
+  font-weight:700;
+  font-size:.8rem;
+  border-radius:6px;
+  padding:.4rem .7rem;
+  color:#fff;
+}
+.pay-visa { background:#1A1F71; }
+.pay-mc { background:#EB001B; }
+.pay-amex { background:#006FCF; }
+.pay-discover { background:#FF6000; }
+.pay-paypal { background:#003087; }
+.pay-paypal span { color:#009cde; font-style:italic; }
+
+/* ===== RIBBON ===== */
+.ribbon {
+  background:var(--gold);
+  color:var(--dark);
+  text-align:center;
+  padding:1rem 2rem;
+  font-weight:700;
+  font-size:1rem;
+  letter-spacing:1px;
+}
+.ribbon.ar { font-family:'Cairo',sans-serif; font-weight:700; }
+
+/* ===== FOOTER ===== */
+.footer {
+  background:var(--dark);
+  color:rgba(255,255,255,0.7);
+  text-align:center;
+  padding:3rem 2rem 2rem;
+}
+.footer .footer-logo {
+  font-family:'Playfair Display',serif;
+  font-size:1.5rem;
+  color:#fff;
+  margin-bottom:.5rem;
+}
+.footer .footer-logo.ar {
+  font-family:'Cairo',sans-serif;
+  font-weight:700;
+}
+.footer p { font-size:.9rem; margin-bottom:.3rem; }
+.footer p.ar { font-family:'Cairo',sans-serif; }
+.footer .heart { color:var(--pink-primary); }
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeUp {
+  from { opacity:0; transform:translateY(40px); }
+  to { opacity:1; transform:translateY(0); }
+}
+@keyframes bounce {
+  0%,100% { transform:translateX(-50%) translateY(0); }
+  50% { transform:translateX(-50%) translateY(10px); }
+}
+.reveal {
+  opacity:0;
+  transform:translateY(30px);
+  transition:all .8s ease;
+}
+.reveal.visible {
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* ===== MOBILE ===== */
+@media(max-width:640px) {
+  .section { padding:3rem 1.2rem; }
+  .donate-section { padding:3rem 1.2rem; }
+  .qr-card, .methods-card { padding:1.8rem 1.2rem; }
+  .btn-donate-now { padding:1.1rem 2.5rem; font-size:1.1rem; }
+  .payment-logos { gap:.8rem; }
+  .pay-logo { font-size:.7rem; padding:.3rem .5rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <span class="hero-badge">🎗️ Breast Cancer Awareness Month</span>
+    <h1>Pink October</h1>
+    <h1 class="ar rtl">أكتوبر الوردي</h1>
+    <p class="hero-sub">Every ribbon tells a story. Every donation writes a new chapter of hope, healing, and survival. Join Watan The Seed of Love in the fight against breast cancer.</p>
+    <p class="hero-sub ar rtl">كل شارة تروي قصة. وكل تبرع يكتب فصلاً جديداً من الأمل والشفاء والنجاة. انضموا إلى وطن بذرة الحب في محاربة سرطان الثدي.</p>
+    <div class="hero-cta">
+      <a href="#donate" class="btn-donate">💝 Donate Now · تبرع الآن</a>
+      <a href="#story" class="btn-secondary">Our Mission · رسالتنا</a>
+    </div>
+  </div>
+  <div class="scroll-indicator">⌄</div>
+</section>
+
+<!-- ===== RIBBON ===== -->
+<div class="ribbon">Together We Can Save Lives · معاً نستطيع إنقاذ الأرواح</div>
+
+<!-- ===== STORY ===== -->
+<section class="section" id="story">
+  <div class="section-title">
+    <h2>Why Your Donation Matters</h2>
+    <h2 class="ar rtl">لماذا يهم تبرعك</h2>
+    <p>Every contribution brings us closer to a world without breast cancer</p>
+    <p class="ar rtl">كل مساهمة تقربنا من عالم بلا سرطان ثدي</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card reveal">
+      <div class="icon">🎗️</div>
+      <h3>Awareness</h3>
+      <h3 class="ar">التوعية</h3>
+      <p>Your support funds life-saving awareness campaigns that educate women about early detection — the most powerful weapon against breast cancer.</p>
+      <br>
+      <p class="ar rtl">دعمك يموّل حملات التوعية المنقذة للحياة التي تُعلّم النساء عن الكشف المبكر — أقوى سلاح ضد سرطان الثدي.</p>
+    </div>
+    <div class="story-card reveal">
+      <div class="icon">🤝</div>
+      <h3>Support</h3>
+      <h3 class="ar">الدعم</h3>
+      <p>Donations provide essential support to patients and families navigating the emotional and financial challenges of breast cancer treatment.</p>
+      <br>
+      <p class="ar rtl">التبرعات تقدم الدعم الأساسي للمرضى والعائلات الذين يواجهون التحديات العاطفية والمالية لعلاج سرطان الثدي.</p>
+    </div>
+    <div class="story-card reveal">
+      <div class="icon">🔬</div>
+      <h3>Research</h3>
+      <h3 class="ar">البحث</h3>
+      <p>Together we fund critical research that brings us closer to better treatments, earlier detection methods, and ultimately — a cure.</p>
+      <br>
+      <p class="ar rtl">معاً نموّل الأبحاث الحاسمة التي تقربنا من علاجات أفضل وطرق كشف أبكر وفي النهاية — الشفاء.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== DONATION INFO ===== -->
+<section class="donate-section" id="donate">
+  <div class="donate-inner">
+    <div class="donate-header">
+      <h2>Ways to Donate</h2>
+      <h2 class="ar rtl">طرق التبرع</h2>
+      <p>Choose the method that's easiest for you. Every dollar makes a difference.</p>
+      <p class="ar rtl">اختر الطريقة الأسهل لك. كل دولار يصنع فرقاً.</p>
+    </div>
+    <div class="donate-grid">
+      <!-- QR -->
+      <div class="qr-card">
+        <h3>Donate via QR Code</h3>
+        <h3 class="ar rtl">تبرع عبر رمز QR</h3>
+        <p class="qr-sub">Scan with your phone camera to donate instantly</p>
+        <p class="qr-sub ar rtl">امسح الرمز بكاميرا هاتفك للتبرع فوراً</p>
+        <div class="qr-placeholder">
+          <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=https://www.paypal.com/donate/?hosted_button_id=JP7G5J8QA7YDL" alt="Donate QR Code" />
+        </div>
+        <p class="qr-note">📱 Scan to Donate · امسح للتبرع</p>
+        <p class="qr-note ar rtl">يوجهك إلى صفحة PayPal للتبرع</p>
+      </div>
+      <!-- Methods -->
+      <div class="methods-card">
+        <h3>Other Donation Methods</h3>
+        <h3 class="ar rtl">طرق التبرع الأخرى</h3>
+        <p class="methods-sub">Quick and secure ways to give</p>
+        <p class="methods-sub ar rtl">طرق سريعة وآمنة للتبرع</p>
+        <div class="method-item">
+          <span class="m-icon">💸</span>
+          <div>
+            <div class="m-label">Zelle <span class="ar-label">· زيل</span></div>
+            <div class="m-value">415-696-4700</div>
+          </div>
+        </div>
+        <div class="method-item">
+          <span class="m-icon">🍎</span>
+          <div>
+            <div class="m-label">Apple Pay <span class="ar-label">· آبل باي</span></div>
+            <div class="m-value">4156964700</div>
+          </div>
+        </div>
+        <div class="method-item">
+          <span class="m-icon">💵</span>
+          <div>
+            <div class="m-label">Cash App <span class="ar-label">· كاش أب</span></div>
+            <div class="m-value">$WatanLove</div>
+          </div>
+        </div>
+        <!-- Contact -->
+        <div class="contact-block">
+          <h4>Contact Us</h4>
+          <h4 class="ar rtl">اتصل بنا</h4>
+          <p class="contact-sub">We're here to help · نحن هنا لمساعدتك</p>
+          <div class="contact-phones">
+            <a href="tel:+14158521944" class="contact-phone">📞 +1 415-852-1944</a>
+            <a href="tel:+14156964700" class="contact-phone">📞 +1 415-696-4700</a>
+            <a href="tel:+12098793218" class="contact-phone">📞 +1 209-879-3218</a>
+            <a href="tel:+16469324716" class="contact-phone">📞 +1 646-932-4716</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== DONATE NOW CTA ===== -->
+<section class="donate-cta-section">
+  <div class="donate-cta-inner">
+    <h3>Ready to Make a Difference?</h3>
+    <h3 class="ar rtl">هل أنت مستعد لإحداث فرق؟</h3>
+    <p class="cta-sub">Your generosity saves lives. Donate securely today.</p>
+    <p class="cta-sub ar rtl">كرمك ينقذ الأرواح. تبرع بأمان اليوم.</p>
+    <a href="https://www.paypal.com/donate/?hosted_button_id=JP7G5J8QA7YDL" target="_blank" rel="noopener" class="btn-donate-now">
+      💗 Donate Now · تبرع الآن
+    </a>
+    <div class="payment-logos">
+      <span class="pay-logo pay-visa">VISA</span>
+      <span class="pay-logo pay-mc">Mastercard</span>
+      <span class="pay-logo pay-amex">AMEX</span>
+      <span class="pay-logo pay-discover">Discover</span>
+      <span class="pay-logo pay-paypal">Pay<span>Pal</span></span>
+    </div>
+    <p style="margin-top:1rem;color:#999;font-size:.85rem;">Secure payment powered by PayPal · دفع آمن عبر PayPal</p>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="footer-logo">Watan The Seed of Love</div>
+  <div class="footer-logo ar rtl">وطن بذرة الحب</div>
+  <p>Pink October 2026 · Breast Cancer Awareness Campaign</p>
+  <p class="ar rtl">أكتوبر الوردي 2026 · حملة التوعية بسرطان الثدي</p>
+  <p>Made with <span class="heart">❤</span> for every fighter, survivor, and supporter</p>
+  <p class="ar rtl">صُنع بـ <span class="heart">❤</span> لكل مقاتل وناجٍ ومؤيد</p>
+</footer>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) e.target.classList.add('visible');
+  });
+}, { threshold: 0.15 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
